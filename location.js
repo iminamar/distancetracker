@@ -18,6 +18,7 @@ function getLocation() {
                     coordinates[lastIndex].latitude,
                     coordinates[lastIndex].longitude
                 );
+                console.log('Distance calculated:', distance);
                 displayDistance(distance);
             }
         }, function (error) {
