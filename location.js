@@ -1,4 +1,5 @@
 // Function to get the current location and store it in the coordinates array
+let GlobalDistanceVariable = 0;
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -18,8 +19,9 @@ function getLocation() {
                     coordinates[lastIndex].latitude,
                     coordinates[lastIndex].longitude
                 );
-                console.log('Distance calculated:', distance);
-                displayDistance(distance);
+                GlobalDistanceVariable += distance;
+                console.log('Distance calculated:', GlobalDistanceVariable);
+                displayDistance(GlobalDistanceVariable);
             }
         }, function (error) {
             console.error('Error getting location: ' + error.message);
